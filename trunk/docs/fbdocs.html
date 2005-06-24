@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.1.3  (Linux)">
+	<META NAME="CREATED" CONTENT="20050620;7151700">
+	<META NAME="CHANGED" CONTENT="20050620;7591700">
+	<STYLE>
+	<!--
+		@page { size: 8.5in 11in; margin-left: 0.73in; margin-right: 0.8in; margin-top: 1in; margin-bottom: 1in }
+		P { margin-bottom: 0.08in }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" LINK="#000080" VLINK="#800000" DIR="LTR">
+<P STYLE="margin-bottom: 0in"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=4><B>FireBlog
+0.2 Instructions</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<OL>
+	<LI><P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=4>Prerequisites</FONT></FONT></P>
+</OL>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=3>Well,
+I am assuming a few things here:</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=3>a)
+You have a web server with PHP enabled and MySQL database</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=3>b)
+You have downloaded FireBlog from BerliOS.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=3>So,
+you need those things to set up FireBlog.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><BR>
+</P>
+<OL START=2>
+	<LI><P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=4>Installing
+	FireBlog</FONT></FONT></P>
+</OL>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=3>Now
+we are going to install FireBlog. First, unpack the
+fireblog-x.x.tar.bz2 file onto your webserver. This should create a
+fireblog-x.x directory.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><BR>
+</P>
+<OL START=2>
+	<OL>
+		<LI><P STYLE="margin-bottom: 0in"> <FONT FACE="Bitstream Vera Sans"><FONT SIZE=3><B>Setting
+		up the database</B></FONT></FONT></P>
+	</OL>
+</OL>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=3>In
+the install directory, there should be a db.sql file. Use a tool like
+phpMyAdmin to  create a new database and run the db.sql file on it.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><BR>
+</P>
+<OL START=2>
+	<OL START=2>
+		<LI><P STYLE="margin-bottom: 0in"> <B><FONT SIZE=3><FONT FACE="Bitstream Vera Sans">Setting
+		up your configuration file.</FONT></FONT></B></P>
+	</OL>
+</OL>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=3>Open
+the config.php file in your favourite text editor. Fill in the
+database settings (username, password, database name, hostname), and
+also put your email address in the site_admin field</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><BR>
+</P>
+<OL START=2>
+	<OL START=3>
+		<LI><P STYLE="margin-bottom: 0in"> <FONT FACE="Bitstream Vera Sans"><FONT SIZE=3><B>Creating
+		the Admin user</B></FONT></FONT></P>
+	</OL>
+</OL>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=3>In
+your web browser, enter the path to the install/install.php file and
+press Enter. You should be presented with a form. Fill in the
+details, and press Submit to create the Admin user.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=4>3.
+Setting up your site</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=3>Remove
+the install directory from the server, as it is a huge security risk
+to leave it there, as somebody could gain Admin privileges through
+it. </FONT></FONT>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=3>Now
+go to the root of the fireblog-x.x directory in your web browser. You
+should see the home page of FireBlog. You can now log in by clicking
+the side link 'Login'. Login using the details you gave during
+installation. If all went well, you should be back at the home page,
+and there should now be an 'Admin CP' link on the sidebar. Click it
+to reach the Admin Control Panel. You can now delete the sample news
+articles and comments, and replace them with your own.</FONT></FONT></P>
+<OL START=4>
+	<LI><P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=4>Links
+	and Pages</FONT></FONT></P>
+</OL>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: medium"><FONT FACE="Bitstream Vera Sans"><FONT SIZE=3>In
+the admin control panel, there will be a Pages link. This can be used
+to create pages (HTML can be used in pages). When you create a page,
+you may think “Well how do I get to my page?”. When creating the
+page, you should have entered an ID String. To get to your page,
+point your browser to
+http://&lt;pathtofireblog&gt;/index.php?module=page&amp;page=&lt;id
+string&gt;. You can use that to create a link, by setting the link
+location to the path to your page.</FONT></FONT></P>
+</BODY>
+</HTML>

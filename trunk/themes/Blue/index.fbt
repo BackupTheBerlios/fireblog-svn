@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title><?php echo $site_name; ?></title>
+<link rel="stylesheet" type="text/css" href="themes/<?php echo $theme; ?>/stylesheet.css" />
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+</head>
+<body>
+<div id="header">
+<table width="100%" height="60" cellspacing="0" cellpadding="0" border="0">
+<tr>
+<td nowrap rowspan="3">
+<a href="index.php" alt="<?php echo $site_name; ?>"><img src="themes/<?php echo $theme; ?>/images/header.gif"></a>
+</td>
+</tr>
+</table>
+</div>
+<div id="nav">
+<?php include ("modules/links.php"); links(); ?>
+<?php include ("modules/recent.php"); recent(); ?>
+<?php include ("modules/navarchive.php"); navarchive(); ?>
+<?php include ("modules/navlogin.php"); navlogin(); ?>
+</div>
+<div id="content">
+<?php
+if ($header == "yes") {
+	echo '<div class="entry">';
+	echo "<h3>$site_tagline</h3><br />";
+	echo $site_description;
+	echo '</div>';
+}
+?>
+<?php $module($theme); ?><br /><br />
+</div>
+<div id="footer">
+<p><?php echo $footer; ?><br />
+Powered by <a href="http://fireblog.berlios.de">FireBlog</a>
+</div>
+</body>
+</html>
