@@ -1,17 +1,24 @@
 body {
-font-family: verdana,tahoma,arial,helvetica,sans-serif;
+font-family: fantasy;
 font-size: 0.8em;
-background: #fff;
-margin: 0;
+background: #003;
 }
 
 #content {
 float: left;
+margin-left: 10px;
+margin-top: 10px;
+margin-bottom: 10px;
+margin-right: 0px;
+height: 100%;
+padding: 10px;
+border: 1px dashed #000;
 background: #fff;
 }
 
 #header {
 float: top;
+border: 1px dashed #000;
 background: #417bed;
 }
 
@@ -20,31 +27,33 @@ margin-left: -9000px;
 }
 
 .entry {
-margin: 10px 0;
-margin-bottom: 30px;
+float: left;
+margin: 10px;
 padding: 0 20px;
 width: 675px;
 }
 
 #nav {
 width: 130px;
-float: right;
+float: left;
 padding: 10px;
-margin: 0;
+margin-left: 0px;
+margin-top: 10px;
+margin-bottom: 10px;
 height: 100%;
-border-left: 1px dotted #ddd;
+border: 1px dashed #000;
 background: #fff;
 }
 
 #footer {
-background-color: #000;
-color: #999;
+background-color: #417bed;
+color: #fff;
 padding: 2px;
-border-top: 1px solid #000;
+border-top: 1px dashed #000;
 margin-bottom: -3px;
-border-left: 1px solid #000;
-border-right: 1px solid #000;
-border-bottom: 1px solid #000;
+border-left: 1px dashed #000;
+border-right: 1px dashed #000;
+border-bottom: 1px dashed #000;
 position: relative;
 clear: both;
 }
@@ -213,16 +222,4 @@ color: #2C4B66;
 margin: 5px;
 margin-left: 0;
 }
-
-
-.portfolio {
-padding: 7px;
-border: 1px solid #ccc;
-}
-
-.portfolio:hover {
-padding: 7px;
-border: 1px solid #eee;
-}
-
 

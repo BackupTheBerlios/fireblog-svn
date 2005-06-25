@@ -7,13 +7,8 @@
 </head>
 <body>
 <div id="header">
-<table width="100%" height="60" cellspacing="0" cellpadding="0" border="0">
-<tr>
-<td nowrap rowspan="3">
-<a href="index.php" alt="<?php echo $site_name; ?>"><img src="themes/<?php echo $theme; ?>/images/header.gif"></a>
-</td>
-</tr>
-</table>
+<a href="index.php" alt="<?php echo $site_name; ?>"><img 
+src="themes/<?php echo $theme; ?>/images/header.gif"></a>
 </div>
 <div id="nav">
 <?php include ("modules/links.php"); links(); ?>
