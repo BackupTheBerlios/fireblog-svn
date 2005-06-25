@@ -3,6 +3,7 @@
 // See the file COPYING
 
 function page($theme) {
+	include("includes/smileyparse.php");
 	if (isset($_GET['page'])) {
 		$page = $_GET['page'];
 		$query="SELECT * FROM pages WHERE id_string = '$page'";
@@ -15,6 +16,7 @@ function page($theme) {
 			$id=mysql_result($result,0,"id");
 			$title=mysql_result($result,0,"title");
 			$page=mysql_result($result,0,"page");
+			$page=parseSmiley($page);
 			echo '<div class="entry"><h3>';
 			echo $title;
 			echo '</h3><p>';

@@ -12,6 +12,8 @@ function comments($id, $title) {
 		$comment_id=mysql_result($result,$i,"id");
 		$username=mysql_result($result,$i,"username");
 		$comment=mysql_result($result,$i,"comment");
+		$comment=parseSmiley($comment);
+		
 		echo "<div class=\"comments\">";
 		echo "<span class=\"posttime\"><b>#$comment_id, Re: $title</b>, by $username</span><br /><br />";
 		echo "$comment";

@@ -4,6 +4,7 @@
 
 function news($theme) {
 	include("modules/getcomments.php");
+	include("includes/smileyparse.php");
 	if (isset($_GET["article"])) {
 		$article_id=$_GET["article"];
 		$query="SELECT * FROM news WHERE id = '$article_id'";
@@ -17,7 +18,9 @@ function news($theme) {
 			$title=mysql_result($result,0,"title");
 			$details=mysql_result($result,0,"details");
 			$article=mysql_result($result,0,"short_article");
+			$article=parseSmiley($article);
 			$extended_article=mysql_result($result,0,"extended_article");
+			$extended_article=parseSmiley($extended_article);
 				
 			?>
 			<div class="entry">
@@ -49,6 +52,7 @@ function news($theme) {
 				$title=mysql_result($result,$i,"title");
 				$details=mysql_result($result,$i,"details");
 				$article=mysql_result($result,$i,"short_article");
+				$article=parseSmiley($article);
 				$extended_article=mysql_result($result,$i,"extended_article");
 			
 				?>
