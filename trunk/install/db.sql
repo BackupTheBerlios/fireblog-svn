@@ -22,11 +22,11 @@ CREATE TABLE `config` (
   KEY `id_2` (`id`)
 ) TYPE=MyISAM;
 
-INSERT INTO `config` VALUES (1, 'General', 'Site Name', 'name', 'Name of the site', 'FireBlog 0.2');
+INSERT INTO `config` VALUES (1, 'General', 'Site Name', 'name', 'Name of the site', 'FireBlog 0.3SVN');
 INSERT INTO `config` VALUES (2, 'General', 'Site Tagline', 'tagline', 'Short site description that appears under the title on the home page.', 'The ultimate CMS system!');
 INSERT INTO `config` VALUES (3, 'General', 'Theme Name', 'theme', 'The theme that the site is using', 'Blue');
 INSERT INTO `config` VALUES (4, 'General', 'Page Footer', 'footer', 'This text will be shown in the page footer - can contain HTML', 'This page is a default <b>FireBlog</b> installation');
-INSERT INTO `config` VALUES (5, 'General', 'Site description', 'desc', 'A detailed description of your site, appearing on the home page.', 'Welcome to your brand new FireBlog 0.2 installation. This is the first version, so bug reports are very welcome. Thanks!');
+INSERT INTO `config` VALUES (5, 'General', 'Site description', 'desc', 'A detailed description of your site, appearing on the home page.', 'Welcome to your brand new FireBlog 0.3SVN installation. This is a development version, so bug reports are very welcome. Thanks! Remember that there may be undiscovered bugs and/or security holes');
 
 CREATE TABLE `links` (
   `id` int(6) NOT NULL auto_increment,
