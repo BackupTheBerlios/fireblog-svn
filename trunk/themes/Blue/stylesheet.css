@@ -1,6 +1,6 @@
 body {
 font-family: fantasy;
-font-size: 0.7em;
+font-size: 0.8em;
 background: #003;
 }
 
@@ -26,8 +26,10 @@ background: #fff;
 
 #header {
 float: top;
+margin: 0px;
+height: 60px;
 border: 1px dashed #000;
-background: #417bed;
+background: #79b2f9;
 }
 
 #about {
@@ -38,7 +40,7 @@ margin-left: -9000px;
 float: left;
 margin: 10px;
 padding: 0 20px;
-width: 700px;
+width: 675px;
 }
 
 #nav {
