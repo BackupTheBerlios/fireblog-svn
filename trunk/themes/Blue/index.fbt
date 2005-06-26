@@ -31,7 +31,7 @@ if ($header == "yes") {
 </div>
 <div id="footer">
 <p><?php echo $footer; ?><br />
-Powered by <a href="http://fireblog.berlios.de">FireBlog</a>
+Powered by <a href="http://fireblog.berlios.de">FireBlog</a><br />
 Stylesheet originally created by <a href="http://ramble.host-dot.com">Ramble</a>
 </div>
 </body>
