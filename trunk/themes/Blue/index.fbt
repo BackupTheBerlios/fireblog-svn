@@ -10,6 +10,7 @@
 <a href="index.php" alt="<?php echo $site_name; ?>"><img 
 src="themes/<?php echo $theme; ?>/images/header.gif"></a>
 </div>
+<div id="contentwrapper">
 <div id="nav">
 <?php include ("modules/links.php"); links(); ?>
 <?php include ("modules/recent.php"); recent(); ?>
@@ -26,6 +27,7 @@ if ($header == "yes") {
 }
 ?>
 <?php $module($theme); ?><br /><br />
+</div>
 </div>
 <div id="footer">
 <p><?php echo $footer; ?><br />
