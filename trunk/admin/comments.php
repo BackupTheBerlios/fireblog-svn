@@ -13,6 +13,7 @@ function admin_comments() {
 		$article_id=htmlentities(mysql_result($result,$i,"article"));
 		$comment_user=htmlentities(mysql_result($result,$i,"username"));
 		$comment=htmlentities(mysql_result($result,$i,"comment"));
+		$comment=stripslashes($comment);
 		
 		echo "<form action=\"index.php?module=admin&admin=comments&action=editupdate&edit=$id\" method=\"POST\">";
 		echo "<table>";
@@ -42,6 +43,7 @@ function admin_comments() {
 		$comment = eregi_replace("bastard", "*******", $comment);
 		$comment = preg_replace("[\n]", "<br />", $comment);
 		$comment = str_replace(" i ", " I ", $comment);
+		$comment = addslashes($comment);
 		$query="UPDATE comments SET article='$article_id', username='$comment_user', comment='$comment' WHERE id = '$id' LIMIT 1";
 		$result=mysql_query($query);
 		echo "Comment updated successfully";

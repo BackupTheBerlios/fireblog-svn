@@ -24,6 +24,7 @@ function postcomment($theme) {
 					$comment = preg_replace("[\n]", "<br />", $comment);
 					$comment = str_replace(" i ", " I ", $comment);
 					$comment = strip_tags($comment);
+					$comment = addslashes($comment);
 	
 					$query="INSERT INTO comments VALUES('','$article_id','$username','$comment')";
 					$result=mysql_query($query);
