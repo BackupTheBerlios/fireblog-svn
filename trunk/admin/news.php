@@ -12,7 +12,9 @@ function admin_news() {
 		
 		$news_title=htmlentities(mysql_result($result,0,"title"));
 		$news_short=htmlentities(mysql_result($result,0,"short_article"));
+		$news_short=ereg_replace("&lt;br /&gt;", "", $news_short);
 		$news_extended=htmlentities(mysql_result($result,0,"extended_article"));
+		$news_extended=ereg_replace("&lt;br /&gt;", "", $news_extended);
 		
 		echo "<form action=\"index.php?module=admin&admin=news&action=editupdate&edit=$news_id\" method=\"POST\">";
 		echo "<table>";

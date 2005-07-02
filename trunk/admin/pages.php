@@ -12,6 +12,7 @@ function admin_pages() {
 		
 		$page_title=htmlentities(mysql_result($result,0,"title"));
 		$page_idstring=htmlentities(mysql_result($result,0,"id_string"));
+		$page_idstring=ereg_replace("&lt;br /&gt;", "", $page_idstring);
 		$page_text=htmlentities(mysql_result($result,0,"page"));
 		
 		echo "<form action=\"index.php?module=admin&admin=pages&action=editupdate&edit=$page_id\" method=\"POST\">";
