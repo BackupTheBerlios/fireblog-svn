@@ -37,7 +37,7 @@ function admin_news() {
 		$news_short=$_POST['news_short'];
 		$news_extended=$_POST['news_extended'];
 		$news_short = preg_replace("[\n]", "<br />", $news_short);
-		$news_short = str_replace("i ", "I ", $news_short);
+		$news_short = str_replace(" i ", " I ", $news_short);
 		$news_extended = preg_replace("[\n]", "<br />", $news_extended);
 		$news_extended = str_replace(" i ", " I ", $news_extended);
 		$query="UPDATE news SET title='$news_title', short_article='$news_short', extended_article='$news_extended' WHERE id = '$news_id' LIMIT 1";
@@ -80,7 +80,7 @@ function admin_news() {
 			echo "You must at least enter a short article!";
 		} else {
 			$news_short = preg_replace("[\n]", "<br />", $news_short);
-			$news_short = str_replace("i ", "I ", $news_short);
+			$news_short = str_replace(" i ", " I ", $news_short);
 			$news_extended = preg_replace("[\n]", "<br />", $news_extended);
 			$news_extended = str_replace(" i ", " I ", $news_extended);
 			$query="INSERT INTO news VALUES('','$news_title','$news_details','$news_short','$news_extended')";
