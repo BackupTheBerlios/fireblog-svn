@@ -3,7 +3,7 @@
 // See the file COPYING
 
 function comments($id, $title) {
-	$query="SELECT * FROM comments WHERE article = $id";
+	$query="SELECT * FROM comments WHERE article = $id ORDER BY id";
 	$result=mysql_query($query);
 	$num=mysql_numrows($result);
 	
@@ -21,10 +21,6 @@ function comments($id, $title) {
 		echo "</div>";
 		$i++;
 	}
-	if ($_SESSION['loggedin'] == 1) {
-		echo "<br /><a href=\"index.php?module=postcomment&article_id=$id\">Post a comment...</a>";
-	} else {
-		echo "<br />Login to post a comment";
-	}
+	echo "<br /><a href=\"index.php?module=postcomment&article_id=$id\">Post a comment...</a>";
 }
 ?>
