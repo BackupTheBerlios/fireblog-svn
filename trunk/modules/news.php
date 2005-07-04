@@ -19,8 +19,10 @@ function news($theme) {
 			$details=mysql_result($result,0,"details");
 			$article=mysql_result($result,0,"short_article");
 			$article=parseSmiley($article);
+			$article=stripslashes($article);
 			$extended_article=mysql_result($result,0,"extended_article");
 			$extended_article=parseSmiley($extended_article);
+			$extended_article=stripslashes($extended_article);
 				
 			?>
 			<div class="entry">

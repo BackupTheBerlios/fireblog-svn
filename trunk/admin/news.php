@@ -13,8 +13,10 @@ function admin_news() {
 		$news_title=htmlentities(mysql_result($result,0,"title"));
 		$news_short=htmlentities(mysql_result($result,0,"short_article"));
 		$news_short=ereg_replace("&lt;br /&gt;", "", $news_short);
+		$news_short=stripslashes($news_short);
 		$news_extended=htmlentities(mysql_result($result,0,"extended_article"));
 		$news_extended=ereg_replace("&lt;br /&gt;", "", $news_extended);
+		$news_extended=stripslashes($news_extended);
 		
 		echo "<form action=\"index.php?module=admin&admin=news&action=editupdate&edit=$news_id\" method=\"POST\">";
 		echo "<table>";
@@ -38,8 +40,10 @@ function admin_news() {
 		$news_extended=$_POST['news_extended'];
 		$news_short = preg_replace("[\n]", "<br />", $news_short);
 		$news_short = str_replace(" i ", " I ", $news_short);
+		$news_short=addslashes($news_short);
 		$news_extended = preg_replace("[\n]", "<br />", $news_extended);
 		$news_extended = str_replace(" i ", " I ", $news_extended);
+		$news_extended=addslashes($news_extended);
 		$query="UPDATE news SET title='$news_title', short_article='$news_short', extended_article='$news_extended' WHERE id = '$news_id' LIMIT 1";
 		$result=mysql_query($query);
 		echo "Article updated successfully";
@@ -81,8 +85,10 @@ function admin_news() {
 		} else {
 			$news_short = preg_replace("[\n]", "<br />", $news_short);
 			$news_short = str_replace(" i ", " I ", $news_short);
+			$news_short=addslashes($news_short);
 			$news_extended = preg_replace("[\n]", "<br />", $news_extended);
 			$news_extended = str_replace(" i ", " I ", $news_extended);
+			$news_extended=addslashes($news_extended);
 			$query="INSERT INTO news VALUES('','$news_title','$news_details','$news_short','$news_extended')";
 			$result=mysql_query($query);
 			echo "Article created successfully";
