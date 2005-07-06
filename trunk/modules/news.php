@@ -16,6 +16,7 @@ function news($theme) {
 		} else {
 			$id=mysql_result($result,0,"id");
 			$title=mysql_result($result,0,"title");
+			$title=stripslashes($title);
 			$details=mysql_result($result,0,"details");
 			$article=mysql_result($result,0,"short_article");
 			$article=parseSmiley($article);

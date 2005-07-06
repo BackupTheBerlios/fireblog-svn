@@ -11,6 +11,7 @@ function admin_news() {
 		$result=mysql_query($query);
 		
 		$news_title=htmlentities(mysql_result($result,0,"title"));
+		$news_title=stripslashes($news_title);
 		$news_short=htmlentities(mysql_result($result,0,"short_article"));
 		$news_short=ereg_replace("&lt;br /&gt;", "", $news_short);
 		$news_short=stripslashes($news_short);
@@ -36,6 +37,7 @@ function admin_news() {
 		$news_id=$_GET['edit'];
 		echo "<b>Updating Article number $news_id...</b><br />";
 		$news_title=$_POST['news_title'];
+		$news_title=addslashes($news_title);
 		$news_short=$_POST['news_short'];
 		$news_extended=$_POST['news_extended'];
 		$news_short = preg_replace("[\n]", "<br />", $news_short);
@@ -71,6 +73,7 @@ function admin_news() {
 	} elseif ($action == "newcreate") {
 		echo "<b>Creating article...</b><br />";
 		$news_title=$_POST['news_title'];
+		$news_short=addslashes($news_title);
 		$news_short=$_POST['news_short'];
 		$news_extended=$_POST['news_extended'];
 		$username = $_SESSION['username'];
@@ -108,6 +111,7 @@ function admin_news() {
 		while ($i < $num) {
 			$news_id=mysql_result($result,$i,"id");
 			$news_title=mysql_result($result,$i,"title");
+			$news_title=stripslashes($news_title);
 			$news_details=mysql_result($result,$i,"details");
 			echo "<tr>";
 			echo "<td>$news_id</td><td>$news_title</td><td>$news_details</td><td><a href=\"index.php?module=admin&admin=news&action=edit&edit=$news_id\">Edit</a> <a href=\"index.php?module=admin&admin=news&action=delete&delete=$news_id\">Delete</a></td>";

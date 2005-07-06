@@ -17,6 +17,7 @@ function page($theme) {
 			$title=mysql_result($result,0,"title");
 			$page=mysql_result($result,0,"page");
 			$page=parseSmiley($page);
+			$page=stripslashes($page);
 			echo '<div class="entry"><h3>';
 			echo $title;
 			echo '</h3><p>';

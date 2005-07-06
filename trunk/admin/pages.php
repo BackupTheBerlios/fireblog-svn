@@ -11,9 +11,11 @@ function admin_pages() {
 		$result=mysql_query($query);
 		
 		$page_title=htmlentities(mysql_result($result,0,"title"));
+		$page_title=stripslashes($page_title);
 		$page_idstring=htmlentities(mysql_result($result,0,"id_string"));
 		$page_idstring=ereg_replace("&lt;br /&gt;", "", $page_idstring);
 		$page_text=htmlentities(mysql_result($result,0,"page"));
+		$page_text=stripslashes($page_text);
 		
 		echo "<form action=\"index.php?module=admin&admin=pages&action=editupdate&edit=$page_id\" method=\"POST\">";
 		echo "<table>";
@@ -33,10 +35,12 @@ function admin_pages() {
 		$page_id=$_GET['edit'];
 		echo "<b>Updating Page number $page_id...</b><br />";
 		$page_title=$_POST['page_title'];
+		$page_title=addslashes($page_title);
 		$page_idstring=$_POST['page_idstring'];
 		$page_text=$_POST['page_text'];
 		$page_text = preg_replace("[\n]", "<br />", $page_text);
 		$page_text = str_replace(" i ", " I ", $page_text);
+		$page_text=addslashes($page_text);
 		$query="UPDATE pages SET title='$page_title', id_string='$page_idstring', page='$page_text' WHERE id = '$page_id' LIMIT 1";
 		$result=mysql_query($query);
 		echo "Page updated successfully";
@@ -64,10 +68,12 @@ function admin_pages() {
 	} elseif ($action == "newcreate") {
 		echo "<b>Creating page...</b><br />";
 		$page_title=$_POST['page_title'];
+		$page_title=addslashes($page_title);
 		$page_idstring=$_POST['page_idstring'];
 		$page_text=$_POST['page_text'];
 		$page_text = preg_replace("[\n]", "<br />", $page_text);
 		$page_text = str_replace(" i ", " I ", $page_text);
+		$page_text=addslashes($page_text);
 		$query="INSERT INTO pages VALUES('','$page_title','$page_idstring','$page_text')";
 		$result=mysql_query($query);
 		echo "Page created successfully";
@@ -86,6 +92,8 @@ function admin_pages() {
 		while ($i < $num) {
 			$page_id=mysql_result($result,$i,"id");
 			$page_title=mysql_result($result,$i,"title");
+			$page_title=stripslashes($page_title);
+			$page_title=stripslashes($page_title);
 			$page_idstring=mysql_result($result,$i,"id_string");
 			echo "<tr>";
 			echo "<td>$page_id</td><td>$page_title</td><td>$page_idstring</td><td><a href=\"index.php?module=admin&admin=pages&action=edit&edit=$page_id\">Edit</a> <a href=\"index.php?module=admin&admin=pages&action=delete&delete=$page_id\">Delete</a></td>";
