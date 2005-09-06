@@ -1,6 +1,6 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] == "POST") {
-	include('../config.php');
+	include('../includes/config.inc.php');
 	mysql_connect($db_host,$db_user,$db_password) or die("Cannot connect to MySQL server!");
 	mysql_select_db($db_name) or die("Cannot connect to database!");
 	$username=$_POST['username'];

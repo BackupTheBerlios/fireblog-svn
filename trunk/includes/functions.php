@@ -3,7 +3,7 @@
 // Copyright Alex Smith 2005 - All Rights Reserved
 // This function connects you to the MySQL database
 function connect() {
-	include('config.php');
+	include('includes/config.inc.php');
 	@mysql_connect($db_host,$db_user,$db_password) or fireblog_die("Cannot connect to MySQL server!", "MySQL");
 	@mysql_select_db($db_name) or fireblog_die("Cannot connect to database!", "MySQL");
 }

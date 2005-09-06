@@ -4,7 +4,7 @@
 
 // We can't do anything without the config file and database connection...
 include("includes/functions.php");
-include("config.php");
+include("includes/config.inc.php");
 connect();
 session_start();
 

@@ -7,28 +7,26 @@
 </head>
 <body>
 <div id="header">
-<a href="index.php" alt="<?php echo $site_name; ?>"><img 
-src="themes/<?php echo $theme; ?>/images/header.gif"></a>
+<a href="index.php" alt="<?php echo $site_name; ?>"><img src="themes/<?php echo $theme; ?>/images/header.png"></a>
 </div>
-<div id="contentwrapper">
-<div id="nav">
+<table id="main">
+<tr>
+<td id="nav">
 <?php include ("modules/links.php"); links(); ?>
 <?php include ("modules/recent.php"); recent(); ?>
 <?php include ("modules/navarchive.php"); navarchive(); ?>
 <?php include ("modules/navlogin.php"); navlogin(); ?>
-</div>
-<div id="content">
+</td>
+<td id="content">
 <?php
 if ($header == "yes") {
-	echo '<div class="entry">';
 	echo "<h3>$site_tagline</h3><br />";
 	echo $site_description;
-	echo '</div>';
 }
 ?>
 <?php $module($theme); ?><br /><br />
-</div>
-</div>
+</td>
+</table>
 <div id="footer">
 <p><?php echo $footer; ?><br />
 Powered by <a href="http://fireblog.berlios.de">FireBlog</a><br />
