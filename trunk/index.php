@@ -5,11 +5,8 @@
 // We can't do anything without the config file and database connection...
 include("includes/functions.php");
 include("includes/config.inc.php");
-connect();
+fb_init();
 session_start();
-
-// So other pages can find us :)
-$root_path = './';
 
 // Now lets find out what the site name is
 $query="SELECT * FROM `config` WHERE `config_name` = 'Site Name'";

@@ -28,9 +28,8 @@ if ($header == "yes") {
 </td>
 </table>
 <div id="footer">
-<p><?php echo $footer; ?><br />
-Powered by <a href="http://fireblog.berlios.de">FireBlog</a><br />
-Stylesheet originally created by <a href="http://ramble.host-dot.com">Ramble</a>
+<p>Powered by <a href="http://fireblog.berlios.de" class="fb">FireBlog</a><br />
+Copyright &copy; Alex Smith 2005. All Rights Reserved</p>
 </div>
 </body>
 </html>

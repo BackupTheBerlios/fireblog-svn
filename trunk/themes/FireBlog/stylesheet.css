@@ -28,10 +28,6 @@ height: 60px;
 background-image: url(images/header-bg.png);
 }
 
-#about {
-margin-left: -9000px;
-}
-
 #nav {
 width: 130px;
 float: left;
@@ -42,12 +38,13 @@ background: #fff;
 }
 
 #footer {
-background-color: #2051ab;
+background-image: url(images/header-bg.png);
 color: #fff;
 padding: 2px;
 position: relative;
 float: bottom;
 clear: both;
+height: 56px;
 }
 
 .val_links {
@@ -157,24 +154,24 @@ position: relative;
 margin-top: 0px;
 }
 
-a.elec:link {
-color: #aaa;
+a.fb:link {
+color: #fff;
 margin: 5px;
 margin-left: 0;
 text-decoration: none;
 font-weight: bold;
 }
 
-a.elec:visited {
-color: #bbb;
+a.fb:visited {
+color: #fff;
 margin: 5px;
 margin-left: 0;
 text-decoration: none;
 font-weight: bold;
 }
 
-a.elec:hover {
-color: #777;
+a.fb:hover {
+color: #149;
 margin: 5px;
 margin-left: 0;
 text-decoration: none;
