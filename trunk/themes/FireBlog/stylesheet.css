@@ -1,7 +1,7 @@
 body {
 font-family: verdana,tahoma,arial,helvetica,sans-serif;
 font-size: 0.8em;
-background: #003;
+background: #000;
 margin: 0px;
 }
 
@@ -34,7 +34,7 @@ float: left;
 padding: 10px;
 margin: 0px;
 height: 100%;
-background: #fff;
+background: #E2F3FF;
 }
 
 #footer {
@@ -47,43 +47,28 @@ clear: both;
 height: 56px;
 }
 
-.val_links {
-float: right;
-margin-top: -15px;
-position: relative;
-}
-
-h1.about {
-font-weight: lighter;
-color: #588AA1;
-font-size: 1.6em;
-margin: 5px;
-margin-left: 0;
-margin-top: 0;
-}
-
 .posttime {
+color: #999;
+font-size: 1.0em;
+}
+
+.navtext {
 color: #999;
 font-size: 0.9em;
 }
 
 .comments {
-border: 1px dotted #ccc;
-background-color: #adccff;
+border: 1px solid #999;
+background-color: #C8E1FF;
 padding: 3px;
 margin-top: 25px;
 }
 
 .comments:hover {
-background-color: #68a1ff;
+background-color: #A5ABFF;
 }
 
-.space { margin-left: 10px; }
-
-
-/*starting the formatting, H1, h1 etc.*/
-
-
+/* Formatting */
 
 h1 {
 font-weight: lighter;
@@ -115,18 +100,20 @@ border: 0;
 
 a:link {
 color: #0072ff;
-
+text-decoration: none;
+font-weight: lighter;
 }
 
 a:visited {
 color: #0072ff;
-
+text-decoration: none;
+font-weight: lighter;
 }
 
 a:hover {
-color: #3fefe5;
+color: #7500FF;
 text-decoration: none;
-
+font-weight: lighter;
 }
 
 hr {

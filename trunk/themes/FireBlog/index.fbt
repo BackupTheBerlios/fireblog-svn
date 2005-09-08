@@ -9,7 +9,7 @@
 <div id="header">
 <a href="index.php" alt="<?php echo $site_name; ?>"><img src="themes/<?php echo $theme; ?>/images/header.png"></a>
 </div>
-<table id="main">
+<table id="main" border="0" cellpadding="0" cellspacing="0">
 <tr>
 <td id="nav">
 <?php include ("modules/links.php"); links(); ?>

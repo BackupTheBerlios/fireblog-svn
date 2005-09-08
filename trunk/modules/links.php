@@ -15,7 +15,7 @@ function links() {
 		$link_target=mysql_result($result,$i,"link_location");
 		
 		?>
-		<a href="<?php echo $link_target; ?>" title="<?php echo $link_description; ?>"><?php echo $link_name; ?></a><br />
+		<div class="navtext">> <a href="<?php echo $link_target; ?>" title="<?php echo $link_description; ?>"><?php echo $link_name; ?></a></div>
 		<?php
 		$i++;
 	}

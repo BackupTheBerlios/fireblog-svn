@@ -19,7 +19,7 @@ function recent() {
 			$title=mysql_result($result,$i,"title");
 		
 		?>
-		<a href="index.php?module=news&article=<?php echo $id ?>"><?php echo $title ?></a><br />
+		<div class="navtext">> <a href="index.php?module=news&article=<?php echo $id ?>"><?php echo $title ?></a></div>
 		<?php
 			$i++;
 		}
