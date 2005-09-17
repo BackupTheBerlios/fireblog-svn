@@ -1,0 +1,186 @@
+/*
+ * FireBlog 1.0 default style.
+ *
+ * Copyright (C) Alex Smith 2005. All Rights Reserved
+*/
+body {
+	font-family: verdana,tahoma,arial,helvetica,sans-serif;
+	font-size: 0.8em;
+	background: #000;
+	margin: 0px;
+}
+
+#content {
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+	padding: 30px;
+	background: #fff;
+	vertical-align: top;
+}
+
+#main {
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+#header {
+	float: top;
+	margin: 0px;
+	height: 60px;
+	background-image: url(images/header-bg.png);
+}
+
+#nav {
+	width: 130px;
+	float: left;
+	padding: 10px;
+	margin: 0px;
+	height: 100%;
+	background: #E2F3FF;
+}
+
+#footer {
+	background-image: url(images/header-bg.png);
+	color: #fff;
+	padding: 2px;
+	position: relative;
+	float: bottom;
+	clear: both;
+	height: 56px;
+}
+
+.posttime {
+	color: #999;
+	font-size: 0.8em;
+}
+
+.navtext {
+	font-size: 0.9em;
+}
+
+.comments {
+	border: 1px solid #999;
+	background-color: #C8E1FF;
+	padding: 3px;
+	margin-top: 25px;
+}
+
+.comments:hover {
+	background-color: #A5ABFF;
+}
+
+/* Formatting */
+
+h1 {
+	font-weight: lighter;
+	color: #5949FF;
+	font-size: 1.8em;
+	margin: 5px;
+	margin-left: 0;
+}
+
+h3 {
+	font-weight: lighter;
+	color: #5949FF;
+	font-size: 1.3em;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	border: 0;
+}
+
+a:link {
+	color: #0072ff;
+	text-decoration: none;
+	font-weight: lighter;
+}
+
+a:visited {
+	color: #0072ff;
+	text-decoration: none;
+	font-weight: lighter;
+}
+
+a:hover {
+	color: #7500FF;
+	text-decoration: none;
+	font-weight: lighter;
+}
+
+hr {
+	background: #b1d9ea;
+	height: 1px;
+	border: 1px solid #b1d9ea;
+	margin: 0;
+	margin-top: 5px;
+}
+
+textarea {
+	font-family: verdana,tahoma,arial,helvetica,sans-serif;
+	font-size: 1em;
+}
+
+.rightalign {
+	float: right;
+	position: relative;
+	margin-top: 0px;
+}
+
+.leftalign {
+	float: left;
+	position: relative;
+	margin-top: 0px;
+}
+
+a.fb:link {
+	color: #fff;
+	margin: 5px;
+	margin-left: 0;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a.fb:visited {
+	color: #fff;
+	margin: 5px;
+	margin-left: 0;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a.fb:hover {
+	color: #149;
+	margin: 5px;
+	margin-left: 0;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/* Titles */
+
+a.h1:link {
+	color: #5949FF;
+	margin: 5px;
+	margin-left: 0;
+	text-decoration: none;
+}
+
+a.h1:visited {
+	color: #5949FF;
+	margin: 5px;
+	margin-left: 0;
+	text-decoration: none;
+}
+
+a.h1:hover {
+	color: #1000CF;
+	margin: 5px;
+	margin-left: 0;
+	text-decoration: none;
+}
+
