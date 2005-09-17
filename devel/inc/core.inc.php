@@ -10,27 +10,32 @@ function fb_init() {
 	session_start();
 	
 	// Now lets find out what the site name is
-	$query="SELECT * FROM `config` WHERE `config_name` = 'Site Name'";
+	$query="SELECT * FROM `config` WHERE `config_shortname` = 'name'";
 	$result=mysql_query($query);
 	$site_name=mysql_result($result,0,"config_value");
 	
 	// And the tagline...
-	$query="SELECT * FROM `config` WHERE `config_name` = 'Site Tagline'";
+	$query="SELECT * FROM `config` WHERE `config_shortname` = 'tagline'";
 	$result=mysql_query($query);
 	$site_tagline=mysql_result($result,0,"config_value");
 	
 	// And the site description...
-	$query="SELECT * FROM `config` WHERE `config_name` = 'Site description'";
+	$query="SELECT * FROM `config` WHERE `config_shortname` = 'desc'";
 	$result=mysql_query($query);
 	$site_desc=mysql_result($result,0,"config_value");
 	
 	// And the theme name...
-	$query="SELECT * FROM `config` WHERE `config_name` = 'Theme Name'";
+	$query="SELECT * FROM `config` WHERE `config_shortname` = 'theme'";
 	$result=mysql_query($query);
 	$theme=mysql_result($result,0,"config_value");
+	
+	// And the default module...
+	$query="SELECT * FROM `config` WHERE `config_shortname` = 'defmod'";
+	$result=mysql_query($query);
+	$defmod=mysql_result($result,0,"config_value");
 	include('themes/' . $theme . '/page_header.fbt');
 	include('themes/' . $theme . '/navbar.fbt');
-	$config = array("site_name" => "$site_name", "site_tagline" => "$site_tagline", "site_desc" => "$site_desc", "theme" => "$theme");
+	$config = array("site_name" => "$site_name", "site_tagline" => "$site_tagline", "site_desc" => "$site_desc", "theme" => "$theme", "defmod" => "$defmod");
 	return $config;
 }
 
