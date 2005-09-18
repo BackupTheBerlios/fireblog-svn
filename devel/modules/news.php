@@ -1,6 +1,6 @@
 <?php
 // FireBlog 1.0 news module
-// Copyright (C) Alex Smith 2005. All Rights Reserved
+// Copyright (C) Alex Smith 2005
 
 $query="SELECT * FROM news ORDER BY id DESC LIMIT 5";
 $result=mysql_query($query);

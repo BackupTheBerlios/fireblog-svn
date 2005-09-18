@@ -1,12 +1,15 @@
 <?php
+// FireBlog 1.0 Core function library
+// Copyright (C) Alex Smith 2005
+
 // function: fb_init
 // description: initialize a database connection, get the config, and sort some template stuff
 // returns: configuration array
 // notes: none
 function fb_init() {
 	include('inc/config.inc.php');
-	mysql_connect($myconf["db_host"],$myconf["db_user"],$myconf["db_pass"]) or fb_die('Could not connect to the database server','MySQL');
-	mysql_select_db($myconf["db_name"]) or fb_die('Could not select database','MySQL');
+	mysql_connect($db_host,$db_user,$db_pass) or fb_die('Could not connect to the database server','MySQL');
+	mysql_select_db($db_name) or fb_die('Could not select database','MySQL');
 	session_start();
 	
 	// Now lets find out what the site name is

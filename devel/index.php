@@ -1,6 +1,6 @@
 <?php
 // FireBlog 1.0 Index page
-// Copyright (C) Alex Smith 2005. All Rights Reserved
+// Copyright (C) Alex Smith 2005
 
 include('inc/core.inc.php');
 $config = fb_init();
@@ -10,7 +10,7 @@ if (isset($_GET['module'])) {
 	if (is_file("modules/$module.php")) {
 		include ("modules/$module.php");
 	} else {
-		echo 'I\'m sorry, but the module requested, ' . $module . ' doesn\'t exist';
+		echo 'I\'m sorry, but the module requested, ' . $module . ', doesn\'t exist';
 	}
 } else {
 	// Load our default module
@@ -20,7 +20,7 @@ if (isset($_GET['module'])) {
 	if (is_file("modules/$module.php")) {
 		include ("modules/$module.php");
 	} else {
-		echo 'Uh oh... The default module, ' . $module . ' doesn\'t exist. You should contact the site admin.';
+		echo 'Uh oh... The default module, ' . $module . ', doesn\'t exist. You should contact the site admin.';
 	}
 }
 fb_close($config['theme']);

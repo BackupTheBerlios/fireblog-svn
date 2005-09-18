@@ -1,7 +1,7 @@
 /*
  * FireBlog 1.0 default style.
  *
- * Copyright (C) Alex Smith 2005. All Rights Reserved
+ * Copyright (C) Alex Smith 2005
 */
 body {
 	font-family: verdana,tahoma,arial,helvetica,sans-serif;
@@ -57,8 +57,9 @@ body {
 	font-size: 0.8em;
 }
 
-.navtext {
+.navstart {
 	font-size: 0.9em;
+	color: #999;
 }
 
 .comments {
