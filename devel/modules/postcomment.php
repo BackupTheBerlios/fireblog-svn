@@ -12,29 +12,12 @@ if ($id == '') {
 	
 }
 
-session_destroy();
-$_SESSION['loggedin'] = 1;
-$_SESSION['user'] = 'Alex';
-$_SESSION['permissions'] = 0;
 if (get_pref('a_comment')) {
 	
-	if ($_SESSION['loggedin'] != 1) {
+	if (!Auth::is_loggedin()) {
 		
 		echo 'This site requires that you login to post a comment';
 		return 1;
-		
-	}
-	
-	if ($_SESSION['permissions'] < 1) {
-		
-		echo 'This site requires that you have an activated account to post a comment.';
-		return 1;
-		
-	}
-	
-	if (!isset($_SESSION['user'])) {
-		
-		die('Hacking attempt. Notifying the CIA, NSA, UN, MI6, MI5, and the site admin. I\'d advise you to run as far as possible.');
 		
 	}
 	
@@ -42,7 +25,6 @@ if (get_pref('a_comment')) {
 
 if ($action == 'post') {
 	
-	echo 'm00p';
 	$comment = $_POST['comment'];
 	$format = get_pref('date');
 	$date = time();
