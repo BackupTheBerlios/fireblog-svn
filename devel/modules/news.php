@@ -68,6 +68,8 @@ if (isset($_GET['article'])) {
 			
 		}
 		
+		echo '<br /><a href="index.php?module=postcomment&article=' . $id . '">Post a comment...</a>';
+		
 	}
 	
 } else {

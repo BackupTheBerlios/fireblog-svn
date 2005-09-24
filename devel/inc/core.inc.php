@@ -8,10 +8,31 @@
 // notes: none
 function get_pref($pref) {
 	
-	$query="SELECT * FROM `config` WHERE `config_shortname` = '$pref'";
-	$result=mysql_query($query);
-	$value=mysql_result($result,0,"config_value");
-	return $value;
+	$query = "SELECT * FROM `config` WHERE `config_shortname` = '$pref'";
+	$result = mysql_query($query);
+	$value = mysql_result($result,0,"config_value");
+	$type = mysql_result($result,0,"config_type");
+	if ($type == 'string') {
+		
+		return $value;
+		
+	} elseif ($type == 'bool') {
+		
+		if ($value == 'Yes') {
+			
+			return true;
+			
+		} else {
+			
+			return false;
+			
+		}
+		
+	} elseif ($type == 'int') {
+		
+		return $value;
+		
+	}
 	
 }
 
