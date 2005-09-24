@@ -12,6 +12,7 @@ function get_pref($pref) {
 	$result = mysql_query($query);
 	$value = mysql_result($result,0,"config_value");
 	$type = mysql_result($result,0,"config_type");
+	
 	if ($type == 'string') {
 		
 		return $value;
@@ -43,9 +44,10 @@ function get_pref($pref) {
 function fb_init() {
 	
 	require('inc/config.inc.php');
+	require('inc/auth.inc.php');
 	mysql_connect($db_host,$db_user,$db_pass) or fb_die('Could not connect to the database server','MySQL');
 	mysql_select_db($db_name) or fb_die('Could not select database','MySQL');
-	session_start();
+	Auth::initialize();
 	
 	$theme = get_pref('theme');
 	require('themes/' . $theme . '/page_header.fbt');

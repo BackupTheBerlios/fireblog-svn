@@ -42,6 +42,7 @@ class NavBar {
 		
 		if ($this->in_section == 1) {
 			
+			$url = str_replace('&','&amp;',$url);
 			echo '<div class="navstart">> <a href="' . $url . '" title="' . $desc . '">' . $label . '</a></div>';
 			
 		} else {
@@ -72,7 +73,7 @@ class NavBar {
 		
 		if ($this->in_section == 1) {
 			
-			echo '<div class="navstart">> <a href="index.php?module=page&page=' . $page_id . '" title="' . $desc . '">' . $label . '</a></div>';
+			echo '<div class="navstart">> <a href="index.php?module=page&amp;page=' . $page_id . '" title="' . $desc . '">' . $label . '</a></div>';
 			
 		} else {
 			
@@ -87,6 +88,7 @@ class NavBar {
 		
 		if ($this->in_section == 1) {
 			
+			$link = str_replace('&','&amp;',$link);
 			echo '<a href="' . $link . '" title="' . $desc . '"><img src="' . $img . '" /></a><br />';
 			
 		} else {
