@@ -1,0 +1,13 @@
+<h1><a href="index.php?module=news&article=<?php echo $id; ?>" class="h1"><?php echo $title; ?></a></h1>
+<span class="posttime">Posted on <?php echo $date; ?> by <?php echo $poster; ?></span><br />
+<?php
+echo $article . '<br />';
+
+if ($extended_article <> "") {
+	
+	echo '<br /><a href="index.php?module=news&article=' . $id . '">Read More ></a>';
+	
+}
+?>
+<hr>
+<span class="rightalign"><a href="index.php?module=news&article=<?php echo $id; ?>"><?php echo $comments; ?> comment(s)</a></span><br /><br />

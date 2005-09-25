@@ -109,16 +109,8 @@ if (isset($_GET['article'])) {
 			$format = get_pref('date');
 			$date = date($format,$date);
 			
-			echo '<h1><a href="index.php?module=news&article=' . $id . '" class="h1">' . $title . '</a></h1>';
-			echo '<span class="posttime">Posted on ' . $date . ' by ' . $poster . '</span><br />';
-			echo $article . '<br />';
-			if ($extended_article <> "") {
-				
-				echo '<br /><a href="index.php?module=news&article=' . $id . '">Read More ></a>';
-	
-			}
-			echo '<hr>';
-			echo '<span class="rightalign"><a href="index.php?module=news&article=' . $id . '">' . $comments . ' comment(s)</a></span><br /><br />';
+			$theme = get_pref('theme');
+			require('themes/' . $theme . '/article.fbt');
 			$i++;
 			
 		}

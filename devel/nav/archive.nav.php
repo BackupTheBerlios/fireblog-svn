@@ -42,4 +42,5 @@ if ($num < 1) {
 	}
 	
 }
+$navbar->section_end();
 ?>
