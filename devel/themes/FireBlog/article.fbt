@@ -5,9 +5,23 @@ echo $article . '<br />';
 
 if ($extended_article <> "") {
 	
-	echo '<br /><a href="index.php?module=news&article=' . $id . '">Read More ></a>';
+	if (isset($_GET['article'])) {
+		
+		echo '<br />' . $extended_article;
+		
+	} else {
+		
+		echo '<br /><a href="index.php?module=news&article=' . $id . '">Read More ></a>';
+		
+	}
 	
 }
 ?>
 <hr>
-<span class="rightalign"><a href="index.php?module=news&article=<?php echo $id; ?>"><?php echo $comments; ?> comment(s)</a></span><br /><br />
+<?php
+if (!isset($_GET['article'])) {
+	
+	echo '<span class="rightalign"><a href="index.php?module=news&article=' . $id . '">' . $comments . ' comment(s)</a></span><br /><br />';
+	
+}
+?>

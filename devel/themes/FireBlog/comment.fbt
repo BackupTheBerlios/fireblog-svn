@@ -1,0 +1,4 @@
+<div class="comments">
+<b>Posted on <?php echo $c_date; ?> by <?php echo $c_user; ?></b><br /><br />
+<?php echo $c_comment; ?>
+</div>

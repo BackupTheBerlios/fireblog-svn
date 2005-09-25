@@ -5,6 +5,9 @@
 // Include required things
 require('inc/smiley.inc.php');
 
+// Get prefs
+$theme = get_pref('theme');
+
 // Do we want a specific article, or shall we just show the posts?
 if (isset($_GET['article'])) {
 	
@@ -31,7 +34,7 @@ if (isset($_GET['article'])) {
 		$format = get_pref('date');
 		$date = date($format,$date);
 		
-		echo '<h1>' . $title . '</h1>';
+		/*echo '<h1>' . $title . '</h1>';
 		echo '<span class="posttime">Posted on ' . $date . ' by ' . $poster . '</span><br />';
 		echo $article . '<br />';
 		if ($extended_article <> "") {
@@ -39,7 +42,9 @@ if (isset($_GET['article'])) {
 			echo '<br />' . $extended_article;
 		
 		}
-		echo '<hr>';
+		echo '<hr>';*/
+		require('themes/' . $theme . '/article.fbt');
+		
 		$c_query = "SELECT * FROM comments WHERE article = '$id'";
 		$c_result = mysql_query($c_query);
 		$c_num = mysql_numrows($c_result);
@@ -64,10 +69,7 @@ if (isset($_GET['article'])) {
 					
 				}
 				
-				echo '<div class="comments">';
-				echo '<b>Posted on ' . $c_date . ' by ' . $c_user . '</b><br /><br />';
-				echo $c_comment;
-				echo '</div>';
+				require('themes/' . $theme . '/comment.fbt');
 				
 				$i++;
 			}
@@ -109,7 +111,6 @@ if (isset($_GET['article'])) {
 			$format = get_pref('date');
 			$date = date($format,$date);
 			
-			$theme = get_pref('theme');
 			require('themes/' . $theme . '/article.fbt');
 			$i++;
 			
