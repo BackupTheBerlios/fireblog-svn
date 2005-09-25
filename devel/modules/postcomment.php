@@ -26,14 +26,32 @@ if (get_pref('a_comment')) {
 if ($action == 'post') {
 	
 	$comment = $_POST['comment'];
-	$format = get_pref('date');
 	$date = time();
-	$date = date($format,$date);
-				
-	echo '<div class="comments">';
-	echo '<b>Posted on ' . $date . ' by ' . $user . '</b><br /><br />';
-	echo $comment;
-	echo '</div>';
+	
+	// Insert to database
+	
+	if (Auth::is_loggedin()) {
+		
+		$user = $_SESSION['user'];
+		
+	} else {
+		
+		$user = 'FBAnonUser';
+		
+	}
+	
+	$query = "INSERT INTO comments VALUES('','$id','$user','$date','$comment')";
+	
+	if (mysql_query($query)) {
+		
+		echo '<b>Comment posted successfully!</b><br />';
+		echo 'Return to the <a href="index.php?module=news&article=' . $id . '">article</a>...';
+		
+	} else {
+		
+		echo '<b>Error: Unable to post comment.</b>';
+		
+	}
 	
 } else {
 	

@@ -58,6 +58,12 @@ if (isset($_GET['article'])) {
 				
 				$c_date = date($format,$c_date);
 				
+				if ($c_user == 'FBAnonUser') {
+					
+					$c_user = get_pref('anon_name');
+					
+				}
+				
 				echo '<div class="comments">';
 				echo '<b>Posted on ' . $c_date . ' by ' . $c_user . '</b><br /><br />';
 				echo $c_comment;

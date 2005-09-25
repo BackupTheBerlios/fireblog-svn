@@ -10,13 +10,18 @@ $result=mysql_query($query);
 $num=mysql_numrows($result);
 
 $i=0;
+
 while ($i < $num) {
+	
 	$type = mysql_result($result,$i,'link_type');
+	
 	if ($type == 'category') {
 		
 		$name = mysql_result($result,$i,'link_name');
 		if ($navbar->in_section == 1) {
+			
 			$navbar->section_end();
+			
 		}
 		$navbar->section_begin($name);
 		
@@ -59,6 +64,13 @@ while ($i < $num) {
 		$navbar->create_module_link($name,$module,$desc);
 		
 	}
+	
 	$i++;
+	
 }
+
+// Then we add all the plugins.
+
+include('nav/archive.nav.php');
+include('nav/user.nav.php');
 ?>
