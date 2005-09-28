@@ -8,6 +8,7 @@ class Auth {
 		
 		// Initialize the session
 		
+		session_name('sid');
 		session_start();
 		
 		// Do a sanity check
@@ -25,13 +26,17 @@ class Auth {
 		
 	}
 	
-	function login($username,$perms) {
+	function login($username,$password) {
 		
 		// Destroy the current session data
 		
 		session_destroy();
 		
 		// Initialize our new session
+		
+		$password = sha1($password);
+		
+		$query = "SELECT * FROM users WHERE `username` = '$username' AND `password` = '$password'";
 		
 		if ($perms < 1) {
 			

@@ -28,12 +28,12 @@ if ($num < 1) {
 		
 		if (strlen($title) <= 13) {
 			
-			$navbar->create_link($title,'index.php?module=news&article=' . $id,$title);
+			$navbar->create_link($title,'index.php?module=news&amp;article=' . $id,$title);
 			
 		} else {
 			
 			$title_short = substr($title,0,13) . '...';
-			$navbar->create_link($title_short,'index.php?module=news&article=' . $id,$title);
+			$navbar->create_link($title_short,'index.php?module=news&amp;article=' . $id,$title);
 			
 		}
 		

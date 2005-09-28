@@ -43,8 +43,12 @@ function get_pref($pref) {
 // notes: none
 function fb_init() {
 	
+	// This is required for valid (X)HTML
+	ini_set('arg_separator.output','&amp;');
+	
 	require('inc/config.inc.php');
 	require('inc/auth.inc.php');
+	
 	mysql_connect($db_host,$db_user,$db_pass) or fb_die('Could not connect to the database server','MySQL');
 	mysql_select_db($db_name) or fb_die('Could not select database','MySQL');
 	Auth::initialize();

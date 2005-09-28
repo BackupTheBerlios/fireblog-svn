@@ -1,0 +1,13 @@
+<form action="index.php?module=login" method="post">
+<table width="100%">
+<tr>
+<td width="15%">Username: </td><td><input type="text" name="username" width="20" /></td>
+</tr>
+<tr>
+<td>Password: </td><td><input type="password" name="password" width="20" /></td>
+</tr>
+<tr>
+<td><input type="submit" value="Login" /></td><td><input type="reset" /></td>
+</tr>
+</table>
+</form>

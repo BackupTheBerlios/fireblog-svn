@@ -42,7 +42,9 @@ class NavBar {
 		
 		if ($this->in_section == 1) {
 			
-			$url = str_replace('&','&amp;',$url);
+			$label = htmlentities($label);
+			$url = htmlentities($url);
+			$desc = htmlentities($desc);
 			echo '<div class="navstart">> <a href="' . $url . '" title="' . $desc . '">' . $label . '</a></div>';
 			
 		} else {
@@ -58,6 +60,7 @@ class NavBar {
 		
 		if ($this->in_section == 1) {
 			
+			$label = htmlentities($label);
 			echo '<div class="navstart">> <a href="index.php" title="Homepage">' . $label . '</a></div>';
 			
 		} else {
@@ -73,6 +76,8 @@ class NavBar {
 		
 		if ($this->in_section == 1) {
 			
+			$label = htmlentities($label);
+			$desc = htmlentities($desc);
 			echo '<div class="navstart">> <a href="index.php?module=page&amp;page=' . $page_id . '" title="' . $desc . '">' . $label . '</a></div>';
 			
 		} else {
@@ -88,8 +93,9 @@ class NavBar {
 		
 		if ($this->in_section == 1) {
 			
-			$link = str_replace('&','&amp;',$link);
-			echo '<a href="' . $link . '" title="' . $desc . '"><img src="' . $img . '" /></a><br />';
+			$link = htmlentities($link);
+			$desc = htmlentities($desc);
+			echo '<a href="' . $link . '" title="' . $desc . '"><img src="' . $img . '" alt="' . $desc . '" /></a><br />';
 			
 		} else {
 			
@@ -104,7 +110,7 @@ class NavBar {
 		
 		if ($this->in_section == 1) {
 			
-			echo '<div align="center">' . $ad_code . '</div>';
+			echo $ad_code . '<br />';
 			
 		} else {
 			
@@ -119,6 +125,9 @@ class NavBar {
 		
 		if ($this->in_section == 1) {
 			
+			$label = htmlentities($label);
+			$module = htmlentities($module);
+			$desc = htmlentities($desc);
 			echo '<div class="navstart">> <a href="index.php?module=' . $module . '" title="' . $desc . '">' . $label . '</a></div>';
 			
 		} else {

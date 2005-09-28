@@ -34,15 +34,6 @@ if (isset($_GET['article'])) {
 		$format = get_pref('date');
 		$date = date($format,$date);
 		
-		/*echo '<h1>' . $title . '</h1>';
-		echo '<span class="posttime">Posted on ' . $date . ' by ' . $poster . '</span><br />';
-		echo $article . '<br />';
-		if ($extended_article <> "") {
-		
-			echo '<br />' . $extended_article;
-		
-		}
-		echo '<hr>';*/
 		require('themes/' . $theme . '/article.fbt');
 		
 		$c_query = "SELECT * FROM comments WHERE article = '$id'";
@@ -76,7 +67,7 @@ if (isset($_GET['article'])) {
 			
 		}
 		
-		echo '<br /><a href="index.php?module=postcomment&article=' . $id . '">Post a comment...</a>';
+		echo '<br /><a href="index.php?module=postcomment&amp;article=' . $id . '">Post a comment...</a>';
 		
 	}
 	
