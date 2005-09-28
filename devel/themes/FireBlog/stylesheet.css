@@ -6,7 +6,7 @@
 body {
 	font-family: verdana,tahoma,arial,helvetica,sans-serif;
 	font-size: 0.8em;
-	background: #000;
+	background-color: #000;
 	margin: 0px;
 }
 
@@ -15,7 +15,7 @@ body {
 	height: 100%;
 	width: 100%;
 	padding: 30px;
-	background: #fff;
+	background-color: #fff;
 	vertical-align: top;
 }
 
@@ -27,7 +27,6 @@ body {
 }
 
 #header {
-	float: top;
 	margin: 0px;
 	height: 60px;
 	background-image: url(images/header-bg.png);
@@ -39,15 +38,15 @@ body {
 	padding: 10px;
 	margin: 0px;
 	height: 100%;
-	background: #E2F3FF;
+	background-color: #E2F3FF;
 }
 
 #footer {
 	background-image: url(images/header-bg.png);
+	background-color: #000;
 	color: #fff;
 	padding: 2px;
 	position: relative;
-	float: bottom;
 	clear: both;
 	height: 56px;
 }
@@ -141,7 +140,6 @@ textarea {
 a.fb:link {
 	color: #fff;
 	margin: 5px;
-	margin-left: 0;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -149,7 +147,6 @@ a.fb:link {
 a.fb:visited {
 	color: #fff;
 	margin: 5px;
-	margin-left: 0;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -157,7 +154,6 @@ a.fb:visited {
 a.fb:hover {
 	color: #149;
 	margin: 5px;
-	margin-left: 0;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -167,21 +163,18 @@ a.fb:hover {
 a.h1:link {
 	color: #5949FF;
 	margin: 5px;
-	margin-left: 0;
 	text-decoration: none;
 }
 
 a.h1:visited {
 	color: #5949FF;
 	margin: 5px;
-	margin-left: 0;
 	text-decoration: none;
 }
 
 a.h1:hover {
 	color: #1000CF;
 	margin: 5px;
-	margin-left: 0;
 	text-decoration: none;
 }
 
