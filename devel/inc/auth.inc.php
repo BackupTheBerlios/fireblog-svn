@@ -8,12 +8,10 @@ class Auth {
 		
 		// Initialize the session
 		
-		session_name('sid');
 		session_start();
 		
 		// Do a sanity check
-		
-		//$_SESSION['loggedin'] = 1;		
+			
 		if ($_SESSION['loggedin'] == 1) {
 			
 			if (!isset($_SESSION['user'])) {
@@ -28,19 +26,27 @@ class Auth {
 	
 	function login($username,$password) {
 		
-		// Destroy the current session data
-		
-		session_destroy();
-		
 		// Initialize our new session
 		
 		$password = sha1($password);
 		
-		$query = "SELECT * FROM users WHERE `username` = '$username' AND `password` = '$password'";
+		$query = "SELECT * FROM users WHERE `username` = '$username' AND `password` = '$password' LIMIT 1";
+		$result = mysql_query($query);
+		$num = mysql_numrows($result);
 		
+		$perms = mysql_result($result,0,'permissions');
+		
+		if ($num < 1) {
+			
+			echo 'Invalid username or password!';
+			return 1;
+			
+		}
+			
 		if ($perms < 1) {
 			
 			echo 'Your account has either been deactivated, or you have not confirmed your registration yet.';
+			return 1;
 			
 		} else {
 			

@@ -26,10 +26,24 @@ if (isset($_GET['article'])) {
 		
 		// Now display it to the user
 		$title = mysql_result($result,0,'title');
+		$cat_id = mysql_result($result,0,'category_id');
 		$date = mysql_result($result,0,'date');
 		$poster = mysql_result($result,0,'poster');
 		$article = parseSmilies(stripslashes(mysql_result($result,0,'short_article')));
 		$extended_article = parseSmilies(stripslashes(mysql_result($result,0,'extended_article')));
+		
+		$cat_query = "SELECT * FROM categories WHERE id = '$cat_id'";
+		$cat_result = mysql_query($cat_query);
+		$cat_num = mysql_numrows($cat_result);
+		if ($cat_num < 1) {
+			
+			$category = 'No category';
+			
+		} else {
+			
+			$category = mysql_result($cat_result,0,'name');
+			
+		}
 		
 		$format = get_pref('date');
 		$date = date($format,$date);
@@ -39,6 +53,7 @@ if (isset($_GET['article'])) {
 		$c_query = "SELECT * FROM comments WHERE article = '$id'";
 		$c_result = mysql_query($c_query);
 		$c_num = mysql_numrows($c_result);
+		
 		if ($c_num < 1) {
 			
 			echo 'No comments have been posted';
@@ -91,6 +106,7 @@ if (isset($_GET['article'])) {
 			
 			$id = mysql_result($result,$i,'id');
 			$title = mysql_result($result,$i,'title');
+			$cat_id = mysql_result($result,$i,'category_id');
 			$date = mysql_result($result,$i,'date');
 			$poster = mysql_result($result,$i,'poster');
 			$article = parseSmilies(stripslashes(mysql_result($result,$i,'short_article')));
@@ -98,6 +114,19 @@ if (isset($_GET['article'])) {
 			$c_query = "SELECT * FROM comments WHERE article = '$id'";
 			$c_result = mysql_query($c_query);
 			$comments = mysql_numrows($c_result);
+			
+			$cat_query = "SELECT * FROM categories WHERE id = '$cat_id'";
+			$cat_result = mysql_query($cat_query);
+			$cat_num = mysql_numrows($cat_result);
+			if ($cat_num < 1) {
+				
+				$category = 'No category';
+				
+			} else {
+				
+				$category = mysql_result($cat_result,0,'name');
+				
+			}
 			
 			$format = get_pref('date');
 			$date = date($format,$date);

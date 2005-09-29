@@ -140,6 +140,7 @@ textarea {
 a.fb:link {
 	color: #fff;
 	margin: 5px;
+	margin-left: 0;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -147,6 +148,7 @@ a.fb:link {
 a.fb:visited {
 	color: #fff;
 	margin: 5px;
+	margin-left: 0;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -154,6 +156,7 @@ a.fb:visited {
 a.fb:hover {
 	color: #149;
 	margin: 5px;
+	margin-left: 0;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -163,18 +166,21 @@ a.fb:hover {
 a.h1:link {
 	color: #5949FF;
 	margin: 5px;
+	margin-left: 0;
 	text-decoration: none;
 }
 
 a.h1:visited {
 	color: #5949FF;
 	margin: 5px;
+	margin-left: 0;
 	text-decoration: none;
 }
 
 a.h1:hover {
 	color: #1000CF;
 	margin: 5px;
+	margin-left: 0;
 	text-decoration: none;
 }
 

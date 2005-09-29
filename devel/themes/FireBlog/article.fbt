@@ -1,5 +1,5 @@
 <h1><a href="index.php?module=news&amp;article=<?php echo $id; ?>" class="h1"><?php echo $title; ?></a></h1>
-<span class="posttime">Posted on <?php echo $date; ?> by <?php echo $poster; ?></span><br />
+<span class="posttime">Posted on <?php echo $date; ?> by <?php echo $poster; ?> in <a href="index.php?module=category&cat=<?php echo $cat_id; ?>"><?php echo $category; ?></a></span><br />
 <?php
 echo $article . '<br />';
 
