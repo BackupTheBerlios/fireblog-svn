@@ -1,0 +1,15 @@
+To add a smiley, just use the ASCII symbol for it, for example ':)' would be a smiley face.
+<form action="index.php?module=postcomment&article=<?php echo $id; ?>&action=post" method="POST">
+<table width="100%">
+<tr>
+<td>
+Comment: 
+</td>
+<td>
+<textarea cols="80" rows="15" name="comment"></textarea>
+</td>
+</tr>
+<tr>
+</table>
+<input type="submit" value="Post"> <input type="reset">
+</form>

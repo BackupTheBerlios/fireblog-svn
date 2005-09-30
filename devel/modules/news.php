@@ -29,8 +29,8 @@ if (isset($_GET['article'])) {
 		$cat_id = mysql_result($result,0,'category_id');
 		$date = mysql_result($result,0,'date');
 		$poster = mysql_result($result,0,'poster');
-		$article = parseSmilies(stripslashes(mysql_result($result,0,'short_article')));
-		$extended_article = parseSmilies(stripslashes(mysql_result($result,0,'extended_article')));
+		$article = parseSmilies(stripslashes(htmlentities(mysql_result($result,0,'short_article'))));
+		$extended_article = parseSmilies(stripslashes(htmlentities(mysql_result($result,0,'extended_article'))));
 		
 		$cat_query = "SELECT * FROM categories WHERE id = '$cat_id'";
 		$cat_result = mysql_query($cat_query);
@@ -109,8 +109,9 @@ if (isset($_GET['article'])) {
 			$cat_id = mysql_result($result,$i,'category_id');
 			$date = mysql_result($result,$i,'date');
 			$poster = mysql_result($result,$i,'poster');
-			$article = parseSmilies(stripslashes(mysql_result($result,$i,'short_article')));
+			$article = parseSmilies(stripslashes(htmlentities(mysql_result($result,$i,'short_article'))));
 			$extended_article = mysql_result($result,$i,'extended_article');
+			
 			$c_query = "SELECT * FROM comments WHERE article = '$id'";
 			$c_result = mysql_query($c_query);
 			$comments = mysql_numrows($c_result);

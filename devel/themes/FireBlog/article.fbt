@@ -21,7 +21,7 @@ if ($extended_article <> "") {
 <?php
 if (!isset($_GET['article'])) {
 	
-	echo '<span class="rightalign"><a href="index.php?module=news&amp;article=' . $id . '">' . $comments . ' comment(s)</a></span><br /><br />';
+	echo '<span class="rightalign"><a href="index.php?module=news&amp;article=' . $id . '">' . $comments . ' comment(s)</a></span><br /><br /><br />';
 	
 }
 ?>
