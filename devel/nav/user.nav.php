@@ -13,9 +13,9 @@ $navbar->section_begin('Members');
 if (Auth::is_loggedin()) {
 	
 	$navbar->create_module_link('My Account','usercp','Change your account settings');
-	if ($_SESSION['permissions'] == 10) {
+	if ($_SESSION['permissions'] >= 5) {
 		
-		$navbar->create_link('Admin','adm','Adminstrate the site');
+		$navbar->create_module_link('Admin','admin','Adminstrate the site');
 		
 	}
 	$navbar->create_module_link('Logout','logout','Logout of the site');

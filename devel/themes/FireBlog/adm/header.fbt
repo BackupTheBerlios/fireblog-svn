@@ -1,0 +1,5 @@
+<table>
+<tr>
+<td><img src="themes/<?php echo $theme; ?>/images/person.png" alt="Admin Panel" /></td><td><h3>FireBlog Adminstration</h3></td>
+</tr>
+</table>

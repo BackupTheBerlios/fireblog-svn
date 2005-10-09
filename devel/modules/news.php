@@ -89,7 +89,7 @@ if (isset($_GET['article'])) {
 } else {
 	
 	// Get our news posts
-	$query = "SELECT * FROM news ORDER BY id DESC LIMIT 5";
+	$query = "SELECT * FROM news ORDER BY date DESC LIMIT 5";
 	$result = mysql_query($query);
 	
 	// Check if there were any posts there
@@ -105,7 +105,7 @@ if (isset($_GET['article'])) {
 		while ($i < $num) {
 			
 			$id = mysql_result($result,$i,'id');
-			$title = mysql_result($result,$i,'title');
+			$title = strip_tags(mysql_result($result,$i,'title'));
 			$cat_id = mysql_result($result,$i,'category_id');
 			$date = mysql_result($result,$i,'date');
 			$poster = mysql_result($result,$i,'poster');
